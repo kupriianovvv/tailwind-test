@@ -1,10 +1,10 @@
 import axios from "axios";
 
 const state = {
-	name: "",
-	phone: "",
+	name: "asd",
+	phone: "asd",
 	email: "",
-	city: "",
+	city_id: "",
 	data: "",
 	isOpened: false
 };
@@ -13,8 +13,9 @@ const getters = {
 	getName: state => state.name,
 	getPhone: state => state.phone,
 	getEmail: state => state.email,
-	getCity: state => state.city,
-	getIsOpened: state => state.isOpened
+	getCity: state => state.city_id,
+	getIsOpened: state => state.isOpened,
+	getData: state => state.data
 };
 
 const actions = {
@@ -33,12 +34,33 @@ const actions = {
 		);
 		console.log(response);
 		commit("postData", response.data)
+		commit("toggleModal")
+	},
+	changeName({ commit }, data) {
+		console.log(data)
+		commit("dataName", data)
+	},
+	changePhone({ commit }, data) {
+		console.log(data)
+		commit("dataPhone", data)
+	},
+	changeEmail({ commit }, data) {
+		console.log(data)
+		commit("dataEmail", data)
+	},
+	changeCity({ commit }, data) {
+		console.log(data)
+		commit("dataCity", data)
 	}
 };
 
 const mutations = {
 	toggleModal: state => state.isOpened = !state.isOpened,
-	postData: (state, data) => state.data = data
+	postData: (state, data) => state.data = data,
+	dataName: (state, data) => state.name = data,
+	dataPhone: (state, data) => state.phone = data,
+	dataEmail: (state, data) => state.email = data,
+	dataCity: (state, data) => state.city_id = data,
 };
 
 export default {
