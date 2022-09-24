@@ -12,22 +12,22 @@
       >
         <div class="bg-white w-full rounded shadow-2xl flex flex-col items-start pl-6 pr-6">
           <div v-if="!getData" class="text-2xl font-bold mt-3">Заказать звонок</div>
-          <form v-if="!getData" class="flex justify-between mt-6" @submit="onSubmit">
-            <label for="name">Имя*</label>
-            <input id="name" class="border border-solid border-gray-300 w-1/6" :value="getName" @change="onChangeName">
+          <form v-if="!getData" class="flex justify-between mt-6 flex-wrap" @submit="onSubmit">
+            <label for="name" class="mr-3">Имя*</label>
+            <input id="name" class="border border-solid border-gray-300 md:w-1/6 mr-3" :value="getName" @change="onChangeName">
             <label for="phone">Телефон*</label>
-            <input id="phone" class="border border-solid border-gray-300 w-1/6" :value="getPhone" @change="onChangePhone">         
-            <label for="email">Email*</label>
-            <input id="email" class="border border-solid border-gray-300 w-1/6" :value="getEmail" @change="onChangeEmail">
-            <label for="city">Город*</label>
-            <select id="city" class="w-1/6" :value="getCity" @change="onChangeCity">
+            <input id="phone" class="border border-solid border-gray-300 md:w-1/6 mr-3" :value="getPhone" @change="onChangePhone">         
+            <label for="email" class="mr-3">Email*</label>
+            <input id="email" class="border border-solid border-gray-300 md:w-1/6 mr-3" :value="getEmail" @change="onChangeEmail">
+            <label for="city" class="mr-3">Город*</label>
+            <select id="city" class="md:w-1/6" :value="getCity" @change="onChangeCity">
               <option value="1">Moscow</option>
               <option value="2">Saint Petersburg</option>
             </select>
           </form>
           <div v-if="getData" v-html="getData" class="min0width: 600px" >
           </div>
-          <button v-if="!getData" class="rounded bg-green-500 text-white px-6 mt-6 py-2 w-3/12 ml-auto  mb-6" @click="onSubmit">Close</button>
+          <button v-if="!getData" class="rounded bg-green-500 text-white px-6 mt-6 py-2 md:w-3/12 md:ml-auto  mb-6" @click="onSubmit">Close</button>
         </div>
       </div>
     </div>

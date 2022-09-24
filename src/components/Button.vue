@@ -1,6 +1,6 @@
 <template>
     <button 
-      class="text-white rounded bg-green-500 px-6 py-4 font-sans font-semibold shadow-lg hover:bg-green-400 outline-none active:outline-none focuse:outline-none"
+      class="text-white rounded  px-6 py-4 font-sans font-semibold shadow-lg  outline-none active:outline-none focuse:outline-none w-full sm:w-auto"
       @click="onToggleModal"
     >
       {{text}}
