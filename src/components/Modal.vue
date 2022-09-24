@@ -4,6 +4,8 @@
     <div
       class="fixed overflow-x-hidden overflow-y-auto inset-0 flex justify-center items-center z-50"
       v-if="getIsOpened"
+      id="overlay"
+      @click="onClose"
     >
       <div
         class="relative mx-auto w-auto max-w-2xxl"
@@ -43,7 +45,7 @@ export default {
   name: 'modal-modal',
   computed: mapGetters(["getIsOpened", "getData", "getName", "getPhone", "getEmail", "getCity"]),
   methods: {
-    ...mapActions(['toggleModal', 'fetchData', 'changeName', 'changePhone', 'changeEmail', 'changeCity',]),
+    ...mapActions(['toggleModal', 'fetchData', 'changeName', 'changePhone', 'changeEmail', 'changeCity', 'changeData']),
     onSubmit(e) {
       e.preventDefault();
       this.fetchData({name: this.getName, email: this.getEmail, phone: this.getPhone, city_id: this.getCity});
@@ -60,6 +62,15 @@ export default {
     },
     onChangeCity(e) {
       this.changeCity(e.target.value)
+    },
+    onClose(e) {
+      if (e.target.id !== "overlay") return;
+      this.toggleModal();
+      this.changeData("");
+      this.changeName("");
+      this.changePhone("");
+      this.changeEmail("");
+      this.changeCity("");
     }
   },
   

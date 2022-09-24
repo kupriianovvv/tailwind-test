@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const state = {
-	name: "asd",
-	phone: "asd",
+	name: "",
+	phone: "",
 	email: "",
 	city_id: "",
 	data: "",
@@ -51,6 +51,10 @@ const actions = {
 	changeCity({ commit }, data) {
 		console.log(data)
 		commit("dataCity", data)
+	},
+	changeData({ commit }, data) {
+		console.log(data);
+		commit("postData", data)
 	}
 };
 
