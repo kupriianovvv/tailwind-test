@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Button text="Заказать в Москву" class="bg-blue-500 hover:bg-blue-400" city="Moscow"/>
-    <Button text="Заказать в Санкт-Петербург" class="bg-green-500 hover:bg-green-400" city="Saint Petersburg"/>
+    <Button text="Заказать в Санкт-Петербург" class="bg-emerald-500 hover:bg-emerald-400" city="Saint Petersburg"/>
     <Modal />
   </div>
 </template>
